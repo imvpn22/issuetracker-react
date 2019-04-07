@@ -1,33 +1,286 @@
-.App {
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Lucida Grande", Helvetica,
+    sans-serif;
+  font-size: 14px;
+  color: #444;
+  background-color: #fafafa;
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background: #ccc;
+  cursor: pointer;
+  padding: 7px 14px;
+  font-family: monospace !important;
+  text-transform: uppercase !important;
+  font-size: .9em !important;
+  border: none;
+  color: #666;
+  /* border-radius: 3px !important; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  color: #333;
+}
+
+/* Style for Issue Edit Page */
+.form {
+  max-width: 600px;
+  width: auto;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.form-group label {
+  width: 30%;
+}
+
+.form-group div {
+  width: 70%;
+}
+
+/* Header Style */
+.product-title {
+  text-decoration: none !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 10px;
+}
+.nav-link {
+  text-transform: uppercase;
+  font-family: monospace;
+  border:  1px solid #17a2b8;
+  border-radius: 3px;
+}
+.nav-link:hover {
+  color: #0c5460;
+  background-color: #17a2b8;
+}
+.active{
+  color: #0c5460;
+  background-color: #17a2b8;
+  border-color: rgba(0, 0, 0, 0);
+}
+.issues-heading {
+  font-size: 1.3em;
+}
+
+.search-box {
+  margin: .3em 0;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+}
+.search-box input, .search-box button {
+  padding: 7px 15px;
+  border: none;
+  outline: none;
+}
+.search-box input {
+  border-radius: 50px 0 0 50px;
+  color: #444;
+  min-width: 60%;
+}
+.search-box button {
+  cursor: pointer;
+  border-radius: 0 50px 50px 0;
+  background-color: #fff;
+  color: #999
+}
+.search-box button:hover {
+  color: #333;
+}
+
+/* Style for Issue List Page */
+.table-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+table,
+tr,
+th,
+td {
+  margin: 0;
+  border: 1px solid #ddd;
+  border-spacing: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table {
+  margin: 1em 0;
 }
+
+th,
+td {
+  padding: .5em 1em;
+}
+
+td a button {
+  box-shadow: none;
+  transition: none;
+  margin: 0 !important;
+}
+
+.issues-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.issue-container {
+  position: relative;
+}
+.issue-list {
+
+}
+.issue-card {
+  max-width: 600px;
+  width: auto;
+  min-height: 150px;
+  margin: 1em;
+  padding: 1em;
+  position: relative;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 6px 20px 0px #dedcdc;
+  transition: all .4s ease-in-out;
+  font-family: 'Source Sans Pro';
+}
+.issue-card:hover {
+  box-shadow: 1px 2px 10px 0px #eee
+}
+.issue-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  color: #f94141;
+}
+.issue-delete:hover {
+  background-color: #f5cdcd;
+  color: #de3a3a;
+}
+.issue-title {
+  /* padding: 5px 0; */
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+.issue-description {
+  color: #555;
+  padding: 5px 0;
+  font-weight: 500;
+  font-size: .9em;
+}
+.issue-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: absolute; */
+  /* bottom: .8em; */
+  /* left: 1em; */
+  /* right: 1em; */
+}
+.issue-tags {
+  padding: .5em 0;
+  width: 50%;
+}
+.issue-tags span {
+  background-color: #484848;
+  color: #cecece;
+  margin-right: .5em;
+  padding: 5px 10px;
+  border-radius: 100px;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: .9em;
+}
+.issue-author {
+  padding: 5px 10px;
+  font-weight: 500;
+}
+.issue-date {
+  padding: 5px 10px;
+  color: #555;
+  font-size: .9em;
+  /* font-weight: 300; */
+}
+
+.add-issue-btn {
+  text-decoration: none !important;
+  position: fixed;
+  right: 3em;
+  bottom: 3em;
+  border-radius: 50%;
+  color: #ddd;
+  background-color: #888;
+  height: 2em;
+  width: 2em;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  box-shadow: 3px 6px 20px 0px #717171;
+  transition: all .4s ease-in-out;
+}
+.add-issue-btn:hover {
+  color: #fff;
+  background-color: #666;
+  box-shadow: 1px 2px 10px 0px #888;
+}
+
+/* Style for new Thread page */
+.form {
+  background-color: #fff;
+  padding: 2em;
+  max-width: 600px;
+  margin: 0 auto;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: 2px 4px 20px 0px #00000024;
+}
+.form-group {
+  display: flex;
+  justify-content: center;
+  padding: .3em;
+}
+.form-group label {
+  width: 30%;
+}
+.form-group input {
+  width: 70%;
+}
+.form-group button {
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.new-issue-form {
+
+}
+.new-issue-form input, .new-issue-form textarea {
+  border: none;
+  outline: none;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+}
+.new-issue-form input:focus,
+.new-issue-form textarea:focus {
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+}
+
+/* Style for Login/Signup */
