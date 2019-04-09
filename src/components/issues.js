@@ -52,10 +52,11 @@ class Issues extends React.Component {
               </a>
              </td>
              <td>
-              <button className='btn btn-info'
-                onClick={() => console.log('Edit')}>
-                Edit
-              </button>
+              <a href={'/issue/' + issue._id + '/edit'}>
+                <button className='btn btn-info'>
+                  Edit
+                </button>
+              </a>
              </td>
              <td>
               <button className='btn btn-danger'
