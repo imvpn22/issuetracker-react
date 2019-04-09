@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 import Header from './components/header';
 import NewIssue from './components/newIssue';
+import ViewIssue from './components/viewIssue';
+import EditIssue from './components/editIssue';
 import NotFound from './components/404';
 
 const routing = (
@@ -15,6 +17,8 @@ const routing = (
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/new-issue" component={NewIssue} />
+      <Route exact path="/issue/:id/view" component={ViewIssue} />
+      <Route exact path="/issue/:id/edit" component={EditIssue} />
       <Route component={NotFound} />
     </Switch>
   </Router>

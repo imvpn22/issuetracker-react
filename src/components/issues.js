@@ -45,10 +45,11 @@ class Issues extends React.Component {
             <td> {Moment(issue.createdDate).format('Do MMM YYYY')} </td>
             <td> {Moment(issue.resolvedDate).format('Do MMM YYYY')} </td>
             <td>
-              <button className='btn btn-primary'
-                onClick={() => console.log('View')}>
-                View
-              </button>
+              <a href={'/issue/' + issue._id + '/view'}>
+                <button className='btn btn-primary'>
+                  View
+                </button>
+              </a>
              </td>
              <td>
               <button className='btn btn-info'

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import './App_1.css';
 import Issues from './components/issues';
 
 import { BASE_URL } from './config';
