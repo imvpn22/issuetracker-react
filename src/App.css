@@ -271,16 +271,21 @@ td a button {
 .new-issue-form {
 
 }
-.new-issue-form input, .new-issue-form textarea {
+.new-issue-form input,
+.new-issue-form textarea,
+.new-issue-form select {
+  background-color: #fff;
   border: none;
   outline: none;
   border: 1px dashed #ddd;
   border-radius: 4px;
+  padding: .5em 1em;
 }
 .new-issue-form input:focus,
-.new-issue-form textarea:focus {
-  border-bottom-style: solid;
-  border-bottom-color: #ccc;
+.new-issue-form textarea:focus,
+.new-issue-form select:focus {
+  border-style: solid;
+  border-color: #ccc;
 }
 
 /* Style for Login/Signup */
