@@ -80,6 +80,7 @@ class App extends Component {
           deleteIssue={this.deleteIssue}
           isSearching={this.state.isSearching}
           handleQuery={this.handleQuery}
+          queryText={this.state.queryText}
         />
         {/*<a href='/new-issue' className='add-issue-btn'>
             <i className="fas fa-plus"></i>
