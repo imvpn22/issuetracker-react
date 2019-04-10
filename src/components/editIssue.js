@@ -69,8 +69,6 @@ class EditIssue extends React.Component {
     ).then(res => res.json())
     .then(updatedIssue => {
       this.props.history.push(`/issue/${updatedIssue._id}/view`);
-      // console.log('test');
-      // console.log(updatedIssue);
     }).catch(err => {
       console.log(err);
     });
@@ -82,7 +80,7 @@ class EditIssue extends React.Component {
       <div className='container'>
 
         <form
-          className='form form-horizontal new-issue-form'
+          className='form form-horizontal new-issue-form issue-card'
           onSubmit={e => this.handleSubmit(e)}>
 
           <div className='form-group'>
@@ -95,6 +93,7 @@ class EditIssue extends React.Component {
             </label>
             <textarea
               className='col-sm-9'
+              rows='4'
               required
               id='description'
               value={this.state.issue.description}
@@ -167,7 +166,7 @@ class EditIssue extends React.Component {
 
           <div className='form-group'>
             <span className='col-sm-4'>
-              <button className="btn btn-primary" type='submit'>
+              <button className="btn btn-info" type='submit'>
                 Update
               </button>
             </span>

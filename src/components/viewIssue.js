@@ -35,41 +35,41 @@ class ViewIssue extends React.Component {
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'> Description </span>
-              <span className='col-sm-8'>{this.state.issue.description}</span>
+              <span className='col-sm-3'> Description </span>
+              <span className='col-sm-9'>{this.state.issue.description}</span>
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'> Severity </span>
-              <span className='col-sm-8'>{this.state.issue.severity}</span>
+              <span className='col-sm-3'> Severity </span>
+              <span className='col-sm-9'>{this.state.issue.severity}</span>
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'> Status </span>
-              <span className='col-sm-8'>{this.state.issue.status}</span>
+              <span className='col-sm-3'> Status </span>
+              <span className='col-sm-9'>{this.state.issue.status}</span>
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'> Created Date </span>
-              <span className='col-sm-8'>
+              <span className='col-sm-3'> Created Date </span>
+              <span className='col-sm-9'>
                 {Moment(this.state.issue.createdDate).format('Do MMM YYYY')}
               </span>
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'> Resolved Date </span>
-              <span className='col-sm-8'>
+              <span className='col-sm-3'> Resolved Date </span>
+              <span className='col-sm-9'>
                 {Moment(this.state.issue.resolvedDate).format('Do MMM YYYY')}
               </span>
             </div>
 
             <div className='form-group'>
-              <span className='col-sm-4'>
+              <span className='col-sm-3'>
                 <a href={'/issue/' + this.state.issue._id + '/edit'}>
                   <button className='btn btn-primary'> Edit </button>
                 </a>
               </span>
-              <span className='col-sm-offset-6 col-sm-8'>
+              <span className='col-sm-offset-6 col-sm-9'>
                 <a href={'/'}>
                   <button className='btn btn-danger'> Home </button>
                 </a>
