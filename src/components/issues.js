@@ -4,7 +4,7 @@ import Moment from 'moment';
 class Issues extends React.Component {
   render() {
     return (
-      <div className=''>
+      <div className='container'>
 
         <div className='issues-header'>
           <div className='issues-heading'>Issues List</div>
@@ -66,8 +66,8 @@ class Issues extends React.Component {
              </td>
           </tr>
         )) :
-          <tr className='issue-card center'>
-            <td>No data to show !!!</td>
+          <tr className='center'>
+            <td className='no-issue' colSpan='9'> No data to show !!! </td>
           </tr>
          }
 
