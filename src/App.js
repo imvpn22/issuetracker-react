@@ -12,7 +12,15 @@ class App extends Component {
     this.state = {
       issues: [],
       isSearching: false,
-      queryText: ''
+      queryText: '',
+      colFilters: {
+        showFilters: false,
+        description: true,
+        severity: true,
+        status: true,
+        createdDate: true,
+        resolvedDate: true
+      }
     }
   }
 
@@ -72,6 +80,12 @@ class App extends Component {
       });
   };
 
+  updateFilter = (key) => {
+    let colFilters = this.state.colFilters;
+    colFilters[key] = !colFilters[key];
+    this.setState({ colFilters });
+  };
+
   render() {
     return (
       <div className="container">
@@ -81,6 +95,8 @@ class App extends Component {
           isSearching={this.state.isSearching}
           handleQuery={this.handleQuery}
           queryText={this.state.queryText}
+          filters={this.state.colFilters}
+          updateFilter={this.updateFilter}
         />
         {/*<a href='/new-issue' className='add-issue-btn'>
             <i className="fas fa-plus"></i>

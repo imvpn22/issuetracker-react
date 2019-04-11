@@ -246,3 +246,48 @@ td a button {
   border-style: solid;
   border-color: #ccc;
 }
+
+/* Style for Column filter */
+.col-filter {}
+
+.col-filter button {
+  margin: .5em;
+  transition: all .4s ease-in-out;
+}
+.col-filter .btn-default {
+  background-color: #ddd;
+}
+.filters {
+  transition: all .3s ease-in-out;
+}
+.hidden {
+  display: none;
+}
+.filters label {
+  margin: .5em;
+  padding: 6px 14px;
+  background-color: #ddd;
+  border-radius: 3px;
+  color: #444;
+  cursor: pointer;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: .9em;
+  border: 1px dashed rgba(0,0,0,0);
+  transition: all .3s ease-in-out;
+}
+.filters label:hover {
+  border-color: #369aab !important;
+}
+.active-filter {
+  background-color: #3eb9ce !important;
+  color: #fff !important;
+}
+.active-filter:hover {
+  background-color: #369aab !important;
+}
+.filters label input {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}

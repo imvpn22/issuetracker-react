@@ -1,6 +1,8 @@
 import React from 'react';
 import Moment from 'moment';
 
+import ColFilters from './colFilters';
+
 class Issues extends React.Component {
   render() {
     return (
@@ -22,15 +24,20 @@ class Issues extends React.Component {
           </div>
         </div>
 
+        <ColFilters
+          filters={this.props.filters}
+          updateFilter={this.props.updateFilter}
+        />
+
         <table className='table table-bordered table-hover'>
         <tbody>
         <tr>
           <th> S.N. </th>
-          <th> Description </th>
-          <th> Severity </th>
-          <th> Status </th>
-          <th> Created Date </th>
-          <th> Resolved Date </th>
+          <th className={!this.props.filters.description ? 'hidden' : ''}> Description </th>
+          <th className={!this.props.filters.severity ? 'hidden' : ''}> Severity </th>
+          <th className={!this.props.filters.status ? 'hidden' : ''}> Status </th>
+          <th className={!this.props.filters.createdDate ? 'hidden' : ''}> Created Date </th>
+          <th className={!this.props.filters.resolvedDate ? 'hidden' : ''}> Resolved Date </th>
           <th> View </th>
           <th> Edit </th>
           <th> Delete </th>
@@ -39,11 +46,21 @@ class Issues extends React.Component {
         {this.props.issues.length > 0 ? this.props.issues.map((issue, index) => (
           <tr key={issue._id}>
             <td> {index + 1} </td>
-            <td> {issue.description} </td>
-            <td> {issue.severity} </td>
-            <td> {issue.status} </td>
-            <td> {Moment(issue.createdDate).format('Do MMM YYYY')} </td>
-            <td> {Moment(issue.resolvedDate).format('Do MMM YYYY')} </td>
+            <td className={!this.props.filters.description ? 'hidden' : ''}>
+              {issue.description}
+            </td>
+            <td className={!this.props.filters.severity ? 'hidden' : ''}>
+              {issue.severity}
+            </td>
+            <td className={!this.props.filters.status ? 'hidden' : ''}>
+              {issue.status}
+            </td>
+            <td className={!this.props.filters.createdDate ? 'hidden' : ''}>
+              {Moment(issue.createdDate).format('Do MMM YYYY')}
+            </td>
+            <td className={!this.props.filters.resolvedDate ? 'hidden' : ''}>
+              {Moment(issue.resolvedDate).format('Do MMM YYYY')}
+            </td>
             <td>
               <a href={'/issue/' + issue._id + '/view'}>
                 <button className='btn btn-primary'>
